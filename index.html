@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#153d2b">
+
+    <title>Tullu Rajota Church | Waldaa Kiristaanaa Tullu Rajota</title>
+
+    <style>
+        :root {
+            --green: #153d2b;
+            --green-light: #24583e;
+            --gold: #d7b66b;
+            --cream: #fbf8ef;
+            --white: #ffffff;
+            --text: #28372e;
+            --muted: #68746b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.7;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px #0000000b;
+        }
+
+        .nav {
+            min-height: 82px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--green);
+            font-weight: bold;
+            font-size: 21px;
+            white-space: nowrap;
+        }
+
+        .cross {
+            width: 43px;
+            height: 43px;
+            background: var(--green);
+            color: var(--gold);
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            font-size: 27px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        nav {
+            display: flex;
+            gap: 17px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #a67f32;
+        }
+
+        .language {
+            display: flex;
+            gap: 4px;
+            padding: 5px;
+            border: 1px solid #dce3dc;
+            border-radius: 30px;
+            background: var(--cream);
+            flex-shrink: 0;
+        }
+
+        .language button {
+            border: none;
+            background: transparent;
+            padding: 8px 10px;
+            border-radius: 24px;
+            font-size: 11px;
+            font-weight: bold;
+            color: var(--green);
+        }
+
+        .language button.active {
+            background: var(--green);
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 590px;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                    linear-gradient(
+                            90deg,
+                            rgba(13, 39, 27, .94) 0%,
+                            rgba(21, 61, 43, .80) 50%,
+                            rgba(21, 61, 43, .25) 100%
+                    ),
+                    url("/mnt/data/photo_2_2026-09-06_13-35-07.jpg")
+                    center 40% / cover;
+        }
+
+        .hero-content {
+            max-width: 740px;
+            padding: 90px 0;
+        }
+
+        .eyebrow {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.12;
+            margin-bottom: 22px;
+            font-weight: normal;
+        }
+
+        .hero p {
+            max-width: 610px;
+            font-size: 17px;
+            color: #f1f3ed;
+            margin-bottom: 25px;
+        }
+
+        .hero .oromo-line {
+            color: #f3d99c;
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 13px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid var(--gold);
+            transition: .2s;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: #1a3022;
+        }
+
+        .btn-outline {
+            color: white;
+            background: transparent;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* WELCOME STRIP */
+
+        .welcome-strip {
+            background: var(--green);
+            color: white;
+            padding: 24px 0;
+        }
+
+        .strip-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .strip-inner strong {
+            color: var(--gold);
+            font-size: 17px;
+        }
+
+        /* GENERAL SECTIONS */
+
+        section.content-section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 43px;
+        }
+
+        .section-heading .eyebrow {
+            color: #9c7935;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(32px, 4vw, 43px);
+            line-height: 1.2;
+            color: var(--green);
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* WORSHIP CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e9e6da;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 8px 25px #1a302208;
+        }
+
+        .card-icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #f3eddb;
+            color: var(--green);
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 23px;
+            color: var(--green);
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 14px;
+            margin-bottom: 13px;
+        }
+
+        .card .detail {
+            color: var(--green);
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 0;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #f0eee3;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-visual {
+            min-height: 420px;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            background: var(--green);
+        }
+
+        .about-visual img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-visual span {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 25px;
+            padding: 40px 25px 24px;
+            background: linear-gradient(transparent, #102b1fe8);
+        }
+
+        .about-copy .eyebrow {
+            color: #9c7935;
+            margin-bottom: 12px;
+        }
+
+        .about-copy h2 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            line-height: 1.2;
+            font-weight: normal;
+            color: var(--green);
+            margin-bottom: 22px;
+        }
+
+        .about-copy p {
+            color: var(--muted);
+            margin-bottom: 17px;
+        }
+
+        .text-link {
+            color: var(--green);
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        /* PHOTO GALLERY */
+
+        .gallery {
+            background: var(--cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px #1a302210;
+            border: 1px solid #e9e6da;
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px #1a302218;
+        }
+
+        .gallery-image {
+            background: #e8e4d7;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            display: block;
+            width: 100%;
+            height: 340px;
+            object-fit: cover;
+            transition: transform .35s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.025);
+        }
+
+        .gallery-item img.icon-image {
+            object-fit: contain;
+            background: #e8e4d7;
+        }
+
+        .gallery-caption {
+            padding: 22px 24px 25px;
+        }
+
+        .gallery-caption h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--green);
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        .gallery-caption p {
+            color: var(--muted);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* EVENTS */
+
+        .event {
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+        }
+
+        .event-date {
+            min-width: 67px;
+            min-height: 72px;
+            background: var(--green);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .event-date span {
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--gold);
+        }
+
+        .event h3 {
+            color: var(--green);
+            font-size: 19px;
+            margin-bottom: 5px;
+        }
+
+        .event p {
+            margin-bottom: 0;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: var(--green);
+            color: white;
+        }
+
+        .contact .section-heading h2 {
+            color: white;
+        }
+
+        .contact .section-heading p {
+            color: #d7e1d7;
+        }
+
+        .contact .eyebrow {
+            color: var(--gold);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .contact-card {
+            padding: 26px;
+            border: 1px solid #ffffff2b;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-card .card-icon {
+            margin: 0 auto 15px;
+            background: #ffffff15;
+            color: var(--gold);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: #d7e1d7;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #102b1f;
+            color: #d7e1d7;
+            padding: 30px 0;
+            font-size: 13px;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        footer strong {
+            color: var(--gold);
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .nav {
+                padding: 14px 0;
+                flex-wrap: wrap;
+            }
+
+            .nav-right {
+                width: 100%;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .about-grid {
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .nav-right {
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                order: 2;
+                gap: 12px 18px;
+            }
+
+            .hero {
+                min-height: 550px;
+                background-position: center;
+            }
+
+            .hero-content {
+                padding: 65px 0;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .strip-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cards,
+            .about-grid,
+            .gallery-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid {
+                gap: 30px;
+            }
+
+            .about-visual,
+            .about-visual img {
+                min-height: 300px;
+                height: 340px;
+            }
+
+            .about-copy h2 {
+                font-size: 35px;
+            }
+
+            .gallery-item img {
+                height: 300px;
+            }
+
+            section.content-section {
+                padding: 60px 0;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .logo {
+                font-size: 17px;
+            }
+
+            .language button {
+                padding: 7px 8px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .gallery-item img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+
+        <a href="#home" class="logo">
+            <span class="cross" aria-hidden="true">✝</span>
+            <span>Tullu Rajota</span>
+        </a>
+
+        <div class="nav-right">
+
+            <nav aria-label="Main navigation">
+                <a href="#home"
+                   data-en="Home"
+                   data-om="Mana">Home</a>
+
+                <a href="#services"
+                   data-en="Worship"
+                   data-om="Waaqeffannaa">Worship</a>
+
+                <a href="#about"
+                   data-en="About Us"
+                   data-om="Waa'ee Keenya">About Us</a>
+
+                <a href="#gallery"
+                   data-en="Gallery"
+                   data-om="Suuraalee">Gallery</a>
+
+                <a href="#events"
+                   data-en="Events"
+                   data-om="Sagantaalee">Events</a>
+
+                <a href="#contact"
+                   data-en="Contact"
+                   data-om="Nu Qunnamaa">Contact</a>
+            </nav>
+
+            <div class="language" aria-label="Choose website language">
+                <button
+                        class="active"
+                        id="englishBtn"
+                        onclick="setLanguage('en')">
+                    English
+                </button>
+
+                <button
+                        id="oromoBtn"
+                        onclick="setLanguage('om')">
+                    Afaan Oromoo
+                </button>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+
+                <div class="eyebrow"
+                     data-en="Faith · Hope · Love"
+                     data-om="Amantii · Abdii · Jaalala">
+                    Faith · Hope · Love
+                </div>
+
+                <h1
+                        data-en="Welcome to Tullu Rajota Church"
+                        data-om="Baga Gara Waldaa Kiristaanaa Tullu Rajota Dhuftan!">
+                    Welcome to Tullu Rajota Church
+                </h1>
+
+                <p
+                        data-en="A place to worship together, grow in faith, and share the love of Jesus Christ. You are welcome here."
+                        data-om="Bakka waliin itti Waaqeffannu, amantii keessatti guddannu, jaalala Yesuus Kiristoos itti waliif qoodnu. Isin simanneerra.">
+                    A place to worship together, grow in faith, and share the love of Jesus Christ. You are welcome here.
+                </p>
+
+                <p class="oromo-line">
+                    Baga gara Waldaa Kiristaanaa Tullu Rajota dhuftan!
+                </p>
+
+                <div class="buttons">
+                    <a class="btn btn-gold"
+                       href="#services"
+                       data-en="Join Our Worship"
+                       data-om="Waaqeffannaa Keenyaan Hirmaadhaa">
+                        Join Our Worship
+                    </a>
+
+                    <a class="btn btn-outline"
+                       href="#contact"
+                       data-en="Contact Our Church"
+                       data-om="Waldaa Keenya Qunnamaa">
+                        Contact Our Church
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- WELCOME STRIP -->
+
+    <div class="welcome-strip">
+        <div class="container strip-inner">
+
+            <strong
+                    data-en="One faith. One family. One community."
+                    data-om="Amantii tokko. Maatii tokko. Hawaasa tokko.">
+                One faith. One family. One community.
+            </strong>
+
+            <span
+                    data-en="Everyone is welcome at Tullu Rajota."
+                    data-om="Tullu Rajota keessatti hundi keessan simatamtaniittu.">
+        Everyone is welcome at Tullu Rajota.
+      </span>
+
+        </div>
+    </div>
+
+    <!-- WORSHIP -->
+
+    <section class="content-section" id="services">
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow"
+                     data-en="Come and worship"
+                     data-om="Kottaa Waaqeffannaa">
+                    Come and worship
+                </div>
+
+                <h2
+                        data-en="Worship & Services"
+                        data-om="Waaqeffannaa fi Tajaajiloota">
+                    Worship & Services
+                </h2>
+
+                <p
+                        data-en="Gather with us in prayer, praise, fellowship, and the Word of God."
+                        data-om="Kadhannaa, faarfannaa, tokkummaa fi Dubbii Waaqayyoo keessatti nu waliin ta'aa.">
+                    Gather with us in prayer, praise, fellowship, and the Word of God.
+                </p>
+
+            </div>
+
+            <div class="cards">
+
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">✝</div>
+
+                    <h3
+                            data-en="Sunday Worship"
+                            data-om="Waaqeffannaa Dilbataa">
+                        Sunday Worship
+                    </h3>
+
+                    <p
+                            data-en="Join our church family for worship, prayer, praise, and biblical teaching."
+                            data-om="Waaqeffannaa, kadhannaa, faarfannaa fi barsiisa Macaafa Qulqulluu irratti maatii waldaa keenyaa waliin hirmaadhaa.">
+                        Join our church family for worship, prayer, praise, and biblical teaching.
+                    </p>
+
+                    <p class="detail"
+                       data-en="Time: To be announced"
+                       data-om="Yeroo: Ni beeksifama">
+                        Time: To be announced
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">🙏</div>
+
+                    <h3
+                            data-en="Prayer Meetings"
+                            data-om="Walga'ii Kadhannaa">
+                        Prayer Meetings
+                    </h3>
+
+                    <p
+                            data-en="Come together to pray for our families, our church, and our community."
+                            data-om="Maatii keenya, waldaa keenya fi hawaasa keenyaaf waliin haa kadhannu.">
+                        Come together to pray for our families, our church, and our community.
+                    </p>
+
+                    <p class="detail"
+                       data-en="Schedule: To be announced"
+                       data-om="Sagantaa: Ni beeksifama">
+                        Schedule: To be announced
+                    </p>
+                </article>
+
+                <article class="card">
+                    <div class="card-icon" aria-hidden="true">📖</div>
+
+                    <h3
+                            data-en="Bible Study"
+                            data-om="Qo'annoo Macaafa Qulqulluu">
+                        Bible Study
+                    </h3>
+
+                    <p
+                            data-en="Grow in your understanding of God's Word and strengthen your faith together."
+                            data-om="Dubbii Waaqayyoo caalaatti hubachuudhaan amantii keessan waliin jabeessaa.">
+                        Grow in your understanding of God's Word and strengthen your faith together.
+                    </p>
+
+                    <p class="detail"
+                       data-en="Schedule: To be announced"
+                       data-om="Sagantaa: Ni beeksifama">
+                        Schedule: To be announced
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US -->
+
+    <section class="content-section about" id="about">
+        <div class="container about-grid">
+
+            <div class="about-visual">
+
+
+                        alt="Children and young members of Tullu Rajota Church gathered together"
+                        loading="lazy">
+
+                <img src="../../untitled2W2/Abbaa.png" height="1158" width="1208"/><img src="photo_7_2026-09-06_13-41-14.jpg" height="960" width="1280"/><span
+                        data-en="Growing together in Christ."
+                        data-om="Kiristoos keessatti waliin guddachuu.">
+          Growing together in Christ.
+        </span>
+
+            </div>
+
+            <div class="about-copy">
+
+                <div class="eyebrow"
+                     data-en="Our church family"
+                     data-om="Maatii Waldaa Keenya">
+                    Our church family
+                </div>
+
+                <h2
+                        data-en="A Place to Belong, Believe & Grow"
+                        data-om="Bakka Tokkummaa, Amantii fi Guddinaa">
+                    A Place to Belong, Believe & Grow
+                </h2>
+
+                <p
+                        data-en="Tullu Rajota is a church community centered on worship, the Word of God, prayer, and love for one another."
+                        data-om="Tullu Rajota hawaasa waldaa Waaqeffannaa, Dubbii Waaqayyoo, kadhannaa fi jaalala walii irratti hundaa'eedha.">
+                    Tullu Rajota is a church community centered on worship, the Word of God, prayer, and love for one another.
+                </p>
+
+                <p
+                        data-en="We welcome individuals and families to grow in faith, serve one another, and share the hope of Jesus Christ."
+                        data-om="Namoota dhuunfaa fi maatii amantii keessatti akka guddatan, waliif akka tajaajilan, abdii Yesuus Kiristoosis akka qoodan ni simanna.">
+                    We welcome individuals and families to grow in faith, serve one another, and share the hope of Jesus Christ.
+                </p>
+
+                <a href="#contact"
+                   class="text-link"
+                   data-en="Come and meet our church family →"
+                   data-om="Kottaa maatii waldaa keenyaa waliin wal baruu →">
+                    Come and meet our church family →
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+
+    <section class="content-section gallery" id="gallery">
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow"
+                     data-en="Our Church in Pictures"
+                     data-om="Waldaa Keenya Suuraadhaan">
+                    Our Church in Pictures
+                </div>
+
+                <h2
+                        data-en="Moments of Faith & Fellowship"
+                        data-om="Yeroo Amantii fi Tokkummaa">
+                    Moments of Faith & Fellowship
+                </h2>
+
+                <p
+                        data-en="Celebrating our worship, our children, our sacred traditions, and our faith in Christ."
+                        data-om="Waaqeffannaa, ijoollee, aadaa qulqulluu fi amantii Kiristoos keessatti qabnu waliin kabajna.">
+                    Celebrating our worship, our children, our sacred traditions, and our faith in Christ.
+                </p>
+
+            </div>
+
+            <div class="gallery-grid">
+
+                <!-- PHOTO 1: CHURCH WORSHIP -->
+
+                <article class="gallery-item">
+
+                    <div class="gallery-image">
+
+
+                        <img src="nigsii.jpg" height="960" width="1280"/></div>
+
+                    <div class="gallery-caption">
+
+                        <h3
+                                data-en="Worship & Tradition"
+                                data-om="Waaqeffannaa fi Aadaa">
+                            Worship & Tradition
+                        </h3>
+
+                        <p
+                                data-en="Honoring our sacred traditions through worship and devotion."
+                                data-om="Waaqeffannaa fi kadhannaa keessatti aadaa qulqulluu keenya kabajuu.">
+                            Honoring our sacred traditions through worship and devotion.
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- PHOTO 2: CHURCH CHILDREN -->
+
+                <article class="gallery-item">
+
+                    <div class="gallery-image">
+
+
+                        <img src="Abbaa.png" height="1300" width="100"/>
+
+
+
+><img src="../../untitled2W2/Abbaa.png" height="1158" width="1208"/><img
+                                src="/mnt/data/photo_7_2026-09-06_13-41-14.jpg"
+                                alt="Children wearing traditional white church garments with gold crosses"
+                                loading="lazy">
+
+
+                        <img src="photo_5_2026-09-06_13-41-14.jpg" height="1280" width="960"/></div>
+
+                    <div class="gallery-caption">
+
+                        <h3
+                                data-en="Our Church Family"
+                                data-om="Maatii Waldaa Keenya">
+                            Our Church Family
+                        </h3>
+
+                        <p
+                                data-en="Our children are a cherished part of our church family and future."
+                                data-om="Ijoolleen keenya kutaa jaalatamaa maatii waldaa keenyaa fi egeree keenyaati.">
+                            Our children are a cherished part of our church family and future.
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- PHOTO 3: SAINTS PETER AND PAUL -->
+
+                <article class="gallery-item">
+
+                    <div class="gallery-image">
+
+
+                        <img src="../../untitled2W2/Abbaa.png" height="1158" width="1208"/></div>
+
+                    <div class="gallery-caption">
+
+                        <h3
+                                data-en="Saints Peter & Paul"
+                                data-om="Qulqulloota Pheexiroos fi Phaawuloos">
+                            Saints Peter & Paul
+                        </h3>
+
+                        <p
+                                data-en="A sacred artwork representing Christian faith and tradition."
+                                data-om="Suuraa qulqulluu amantii Kiristaanaa fi aadaa bakka bu'u.">
+                            A sacred artwork representing Christian faith and tradition.
+                        </p>
+
+                    </div>
+                </article>
+
+                <!-- PHOTO 4: VIRGIN MARY AND CHILD JESUS -->
+
+                <article class="gallery-item">
+
+                    <div class="gallery-image">
+
+
+                        <img src="Screenshot 2026-09-06 164733.png" height="817" width="589"/><img
+                                class="icon-image"
+                                src="/mnt/data/Screenshot 2026-09-06 164733.png"
+                                alt="Traditional religious icon depicting the Virgin Mary holding the Child Jesus"
+                                loading="lazy">
+                    </div>
+
+                    <div class="gallery-caption">
+
+                        <h3
+                                data-en="Virgin Mary & Child Jesus"
+                                data-om="Qulqulleettii Maariyaamii fi Yesuus Daa'ima">
+                            Virgin Mary & Child Jesus
+                        </h3>
+
+                        <p
+                                data-en="A traditional sacred image reflecting devotion, reverence, and faith."
+                                data-om="Suuraa qulqulluu aadaa kabaja, kadhannaa fi amantii calaqqisiisu.">
+                            A traditional sacred image reflecting devotion, reverence, and faith.
+                        </p>
+
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EVENTS -->
+
+    <section class="content-section" id="events">
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow"
+                     data-en="Life together"
+                     data-om="Jireenya Waliinii">
+                    Life together
+                </div>
+
+                <h2
+                        data-en="Church Events & Gatherings"
+                        data-om="Sagantaalee fi Walga'iiwwan Waldaa">
+                    Church Events & Gatherings
+                </h2>
+
+                <p
+                        data-en="Stay connected with our church family and upcoming activities."
+                        data-om="Maatii waldaa keenyaa fi sagantaalee dhufan waliin walitti hidhamaa.">
+                    Stay connected with our church family and upcoming activities.
+                </p>
+
+            </div>
+
+            <div class="cards">
+
+                <article class="card event">
+
+                    <div class="event-date">
+                        <span>✝</span>
+                        <small>CHURCH</small>
+                    </div>
+
+                    <div>
+                        <h3
+                                data-en="Sunday Fellowship"
+                                data-om="Tokkummaa Dilbataa">
+                            Sunday Fellowship
+                        </h3>
+
+                        <p
+                                data-en="Date and time will be announced by the church."
+                                data-om="Guyyaa fi yeroo waldaan ni beeksisa.">
+                            Date and time will be announced by the church.
+                        </p>
+                    </div>
+
+                </article>
+
+                <article class="card event">
+
+                    <div class="event-date">
+                        <span>🙏</span>
+                        <small>PRAYER</small>
+                    </div>
+
+                    <div>
+                        <h3
+                                data-en="Community Prayer"
+                                data-om="Kadhannaa Hawaasaa">
+                            Community Prayer
+                        </h3>
+
+                        <p
+                                data-en="Join us as we pray for our families and community. Schedule to be announced."
+                                data-om="Maatii fi hawaasa keenyaaf waliin haa kadhannu. Sagantaan ni beeksifama.">
+                            Join us as we pray for our families and community. Schedule to be announced.
+                        </p>
+                    </div>
+
+                </article>
+
+                <article class="card event">
+
+                    <div class="event-date">
+                        <span>♡</span>
+                        <small>FAMILY</small>
+                    </div>
+
+                    <div>
+                        <h3
+                                data-en="Church Family Gathering"
+                                data-om="Walga'ii Maatii Waldaa">
+                            Church Family Gathering
+                        </h3>
+
+                        <p
+                                data-en="Details of upcoming church gatherings will be shared here."
+                                data-om="Odeeffannoon walga'iiwwan waldaa dhufanii asitti ni qoodama.">
+                            Details of upcoming church gatherings will be shared here.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="content-section contact" id="contact">
+        <div class="container">
+
+            <div class="section-heading">
+
+                <div class="eyebrow"
+                     data-en="We would love to hear from you"
+                     data-om="Isin irraa dhaga'uu ni barbaanna">
+                    We would love to hear from you
+                </div>
+
+                <h2
+                        data-en="Connect With Tullu Rajota"
+                        data-om="Tullu Rajota Waliin Wal Qunnamaa">
+                    Connect With Tullu Rajota
+                </h2>
+
+                <p
+                        data-en="Have a question, need prayer, or want to visit? Get in touch with our church."
+                        data-om="Gaaffii qabduu, kadhannaa barbaadduu, yookaan nu daawwachuu feetuu? Waldaa keenya qunnamaa.">
+                    Have a question, need prayer, or want to visit? Get in touch with our church.
+                </p>
+
+            </div>
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <div class="card-icon" aria-hidden="true">📍</div>
+
+                    <h3
+                            data-en="Visit Us"
+                            data-om="Nu Daawwadhaa">
+                        Visit Us
+                    </h3>
+
+                    <p
+                            data-en="113 N Saratoga St, St Paul, MN 55104"
+                            data-om="113 N Saratoga St, St Paul, MN 55104">
+                        113 N Saratoga St, St Paul, MN 55104
+                    </p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <div class="card-icon" aria-hidden="true">☎</div>
+
+                    <h3
+                            data-en="Call Us"
+                            data-om="Nu Bilbilaa">
+                        Call Us
+                    </h3>
+
+                    <p
+                            data-en="(612) 441-6883"
+                            data-om="(612) 441-6883">
+                        (612) 441-6883
+                    </p>
+
+                </div>
+
+                <div class="contact-card">
+
+                    <div class="card-icon" aria-hidden="true">✉</div>
+
+                    <h3
+                            data-en="Email Us"
+                            data-om="Imeelii Nuuf Ergaa">
+                        Email Us
+                    </h3>
+
+                    <p
+                            data-en="tullurajota@gmail.com"
+                            data-om="tullurajota@gmail.com">
+                        tullurajota@gmail.com
+                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+    <div class="container footer-inner">
+
+        <div>
+            <strong>✝ Tullu Rajota</strong>
+
+            <span
+                    data-en=" | A family united in Christ."
+                    data-om=" | Maatii Kiristoos keessatti tokko taane.">
+        | A family united in Christ.
+      </span>
+        </div>
+
+        <div>
+            © <span id="year"></span> Tullu Rajota.
+            <span
+                    data-en="All are welcome."
+                    data-om="Hundi keessan simatamtaniittu.">
+        All are welcome.
+      </span>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    function setLanguage(lang) {
+        document.documentElement.lang = lang === "om" ? "om" : "en";
+
+        document.querySelectorAll("[data-en][data-om]").forEach(element => {
+            element.textContent =
+                lang === "om"
+                    ? element.getAttribute("data-om")
+                    : element.getAttribute("data-en");
+        });
+
+        document.getElementById("englishBtn")
+            .classList.toggle("active", lang === "en");
+
+        document.getElementById("oromoBtn")
+            .classList.toggle("active", lang === "om");
+
+        try {
+            localStorage.setItem("tulluRajotaLanguage", lang);
+        } catch (error) {
+            // Language switching still works without browser storage.
+        }
+    }
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+    try {
+        const savedLanguage =
+            localStorage.getItem("tulluRajotaLanguage");
+
+        if (savedLanguage === "om" || savedLanguage === "en") {
+            setLanguage(savedLanguage);
+        }
+    } catch (error) {
+        // English is the default language.
+    }
+</script>
+
+</body>
